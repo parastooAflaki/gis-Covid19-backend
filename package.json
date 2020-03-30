@@ -13,9 +13,10 @@
     "express": "^4.17.1",
     "file-system": "^2.2.2",
     "fis": "^1.10.5",
-    "point-in-polygon": "^1.0.1"
+    "point-in-polygon": "^1.0.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "nodeman": "^1.1.2"
+    "nodemon": "^2.0.2"
   }
 }

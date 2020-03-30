@@ -8,11 +8,12 @@ const addPolygon = (polygon)=>{
     rawWriteData =  JSON.stringify(data);
     fs.writeFileSync(path, rawWriteData);
 }
+
 const getPolygans = ()=> {
     return data.features;
 }
 module.exports = {
-    addPolygon : addPolygon,
-    getPolygans : getPolygans
+    getPolygans : getPolygans,
+    addPolygon : addPolygon
 
 }

@@ -3,7 +3,7 @@ var inside = require('point-in-polygon');
 const repo = require('C:/Users/Asus/Desktop/Covid19-gis-backend/repository/gis-repository');
 
 const testpoint = (point)=> {
-    const polygans = repo.getPolygons();
+    const polygans = repo.getPolygans();
     let results = [];
     for ( polygan in polygans) {
         if (inside(point , polygan.geometry.coordinates)) {
