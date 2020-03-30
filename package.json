@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "file-system": "^2.2.2"
   },
   "devDependencies": {
     "nodeman": "^1.1.2"
