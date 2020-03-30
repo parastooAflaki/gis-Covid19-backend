@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "devstart": "nodeman index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "file-system": "^2.2.2"
+    "file-system": "^2.2.2",
+    "fis": "^1.10.5",
+    "point-in-polygon": "^1.0.1"
   },
   "devDependencies": {
     "nodeman": "^1.1.2"
