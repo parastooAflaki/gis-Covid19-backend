@@ -1,6 +1,5 @@
 fs = require('fs')
 resourcePath = '../resources/resource.json'
-//console
 let rawreaddata  = fs.readFileSync(resourcePath);
 let data = JSON.parse(rawreaddata);
 const config = require('../logger/logger');
