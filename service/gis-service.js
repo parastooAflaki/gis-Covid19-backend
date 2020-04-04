@@ -1,22 +1,39 @@
 const app = require('express')();
 var inside = require('point-in-polygon');
-const repo = require('C:/Users/Asus/Desktop/Covid19-gis-backend/repository/gis-repository');
+const repo = require('../repository/gis-repository');
+const config = require('../logger/logger');
+let logger = config.createLogger('service-controller');
+
 
 const testpoint = (point)=> {
-    const polygans = repo.getPolygans();
+    const polygons = repo.getPolygons();
+    
     let results = [];
-    for ( polygan in polygans) {
-        if (inside(point , polygan.geometry.coordinates)) {
-             results.push(polygon.properties.name);
-        }
+   polygons.forEach(element => {
+
+    if (inside(point , element.geometry.coordinates[0])) {
+        logger.log('info',"point "+point+"found in polygon "+element.properties.name)
+        results.push(element.properties.name);
     }
+
+   });
+        
     return results;
 }
+
+
 const addPolygon = (polygon) => {
-	repo.addPolygon(polygon);
+    repo.addPolygon(polygon);
 };
+
+
+const returnAllPolygons = ()=> {
+    return repo.getPolygons();
+}
+
 
 module.exports = {
     testpoint : testpoint,
-    addPolygon : addPolygon
+    addPolygon : addPolygon,
+    returnAllPolygons : returnAllPolygons
 }
