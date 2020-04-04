@@ -1,5 +1,6 @@
 fs = require('fs')
-resourcePath = 'C:/Users/Asus/Desktop/Covid19-gis-backend/resources/resource.json'
+resourcePath = '../resources/resource.json'
+//console
 let rawreaddata  = fs.readFileSync(resourcePath);
 let data = JSON.parse(rawreaddata);
 const config = require('../logger/logger');
@@ -8,6 +9,7 @@ let logger = config.createLogger('gis-repository');
 const addPolygon = (polygon)=>{
     data.features.push(polygon);
     rawWriteData =  JSON.stringify(data);
+
     fs.writeFileSync(resourcePath, rawWriteData);
     logger.log('info','new polygon is written to file')
 }
