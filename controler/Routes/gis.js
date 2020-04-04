@@ -31,6 +31,7 @@ router.get('/testpoint',[
                      }
                     let point = [req.query.lat , req.query.long]
                     result = service.testpoint(point)
+                    
                     if(result.isEmpty)
                         res.status('200').send("No area found")
                     else
