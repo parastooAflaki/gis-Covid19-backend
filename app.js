@@ -8,7 +8,7 @@ app.use(express.json());
 app.use('/gis', gisRoute)
 app.get('/',(req,res)=> {
     logger.log('info','get req to localhost')
-    res.send("hi :) \n APIS : \n GET req to \gis\testpoint \n PUT req to \gis\addpolygon");
+    res.send(`hi :)` +'<br/>'+` APIS : `+ `<br/>`+` GET req to \\gis\\testpoint`+`<br>` +`PUT req to \\gis\\addpolygon`);
 });
 
 app.listen(process.env.PORT , console.log("running"));
